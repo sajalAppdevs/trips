@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../screens/account.dart';
 import '../screens/dashboard.dart';
 import '../screens/home.dart';
 
@@ -13,5 +14,6 @@ class Routes {
   static Map<String, Widget Function(BuildContext)> routes = {
     home: (context) => const HomeScreen(),
     dashboard: (context) => const DashboardScreen(),
+    account: (context) => const MyAccountScreen(),
   };
 }

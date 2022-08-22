@@ -33,4 +33,7 @@ class Strings {
   static const notificationsTitle = 'Notifications';
   static const later = 'Later';
   static const noNotification = 'No New Notification';
+
+  // My Account
+  static const myAccountTitle = 'My Account';
 }

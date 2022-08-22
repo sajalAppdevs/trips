@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../core/assets.dart';
 import '../core/dimens.dart';
+import '../core/routes.dart';
 import '../core/strings.dart';
 import '../widgets/bottom_bar.dart';
 import '../widgets/image_box.dart';
@@ -95,7 +96,10 @@ class _DashboardScreen extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                const UserImage(),
+                GestureDetector(
+                  onTap: () => Navigator.pushNamed(context, Routes.account),
+                  child: const UserImage(),
+                ),
               ],
             ),
             const Text(Strings.dashboardSubtitle),

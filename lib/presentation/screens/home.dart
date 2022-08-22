@@ -23,11 +23,15 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 children: [
                   const Spacer(flex: 2),
-                  const FractionallySizedBox(
+                  FractionallySizedBox(
                     widthFactor: 0.24,
                     child: FittedBox(
                       fit: BoxFit.fill,
-                      child: UserImage(),
+                      child: GestureDetector(
+                        onTap: () =>
+                            Navigator.pushNamed(context, Routes.account),
+                        child: const UserImage(),
+                      ),
                     ),
                   ),
                   vSpace(),

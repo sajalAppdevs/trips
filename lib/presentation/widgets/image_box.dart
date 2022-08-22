@@ -46,7 +46,7 @@ class ImageBox extends StatelessWidget {
           Text(
             text,
             textAlign: TextAlign.center,
-            overflow: TextOverflow.ellipsis,
+            overflow: textWrap ? null : TextOverflow.ellipsis,
             maxLines: textWrap ? null : 1,
             softWrap: textWrap,
           ),
