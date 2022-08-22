@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../core/dimens.dart';
+
 class BottomBar extends StatelessWidget {
   final List<IconData> icons;
   final Function(int)? onClick;
@@ -16,8 +18,9 @@ class BottomBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return ConstrainedBox(
       constraints: BoxConstraints(
-        minHeight:
-            MediaQuery.of(context).padding.bottom + kBottomNavigationBarHeight,
+        minHeight: MediaQuery.of(context).padding.bottom +
+            kBottomNavigationBarHeight +
+            sPadding,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -52,29 +55,29 @@ class BottomBarItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return InkWell(
-      onTap: onClick,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        IconButton(
+          onPressed: onClick,
+          icon: Icon(
             icon,
             color: selected
                 ? theme.colorScheme.primary
                 : theme.colorScheme.primaryContainer,
           ),
-          if (selected) ...{
-            Container(
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: theme.colorScheme.primary,
-              ),
-              width: 4,
-              height: 4,
-            )
-          }
-        ],
-      ),
+        ),
+        if (selected) ...{
+          Container(
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: theme.colorScheme.primary,
+            ),
+            width: 4,
+            height: 4,
+          )
+        }
+      ],
     );
   }
 }

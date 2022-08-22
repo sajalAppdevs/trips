@@ -9,11 +9,9 @@ class Strings {
   static const createTrip = 'Create New Trip Plans';
   static const continuePlan = 'Continue a previous plan';
 
-  // Home
+  // Dashboard
   static const dashboardTitle = 'Hi Olivia';
   static const dashboardSubtitle = 'All you need for your new trip right here.';
-
-  // Dashboard
   static const drinks = 'Drinks';
   static const flights = 'Flights';
   static const itinerary = 'Itinerary';
@@ -24,4 +22,10 @@ class Strings {
   static const shortStory = 'Short Story';
   static const weather = 'Weather';
   static const expensesPlanner = 'Expenses Planner';
+
+  // Plans
+  static const plansTitle = 'Saved Trip Plans';
+  static const austria = 'Austria';
+  static const seychelles = 'Seychelles';
+  static const paris = 'Paris';
 }

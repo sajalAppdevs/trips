@@ -7,6 +7,7 @@ import '../core/strings.dart';
 import '../widgets/bottom_bar.dart';
 import '../widgets/image_box.dart';
 import '../widgets/user_image.dart';
+import 'plans.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({Key? key}) : super(key: key);
@@ -26,7 +27,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   ];
   final pages = const [
     _DashboardScreen(),
-    SizedBox(),
+    PlansScreen(),
     SizedBox(),
   ];
 
