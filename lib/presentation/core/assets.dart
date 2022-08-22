@@ -16,7 +16,7 @@ class Assets {
   static const map = 'assets/images/map.png';
   static const packHelp = 'assets/images/pack_help.png';
   static const restaurants = 'assets/images/restaurants.png';
-  static const shortStory = 'assets/images/short_story.png';
+  static const shortStay = 'assets/images/short_stay.png';
   static const weather = 'assets/images/weather.png';
   static const expensesPlanner = 'assets/images/expenses_planner.png';
 

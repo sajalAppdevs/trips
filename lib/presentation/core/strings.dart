@@ -19,7 +19,7 @@ class Strings {
   static const map = 'Map';
   static const packHelp = 'Pack Help';
   static const restaurants = 'Restaurants';
-  static const shortStory = 'Short Story';
+  static const shortStay = 'Short Stay';
   static const weather = 'Weather';
   static const expensesPlanner = 'Expenses Planner';
 
@@ -28,4 +28,9 @@ class Strings {
   static const austria = 'Austria';
   static const seychelles = 'Seychelles';
   static const paris = 'Paris';
+
+  // Notifications
+  static const notificationsTitle = 'Notifications';
+  static const later = 'Later';
+  static const noNotification = 'No New Notification';
 }

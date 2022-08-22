@@ -7,6 +7,7 @@ import '../core/strings.dart';
 import '../widgets/bottom_bar.dart';
 import '../widgets/image_box.dart';
 import '../widgets/user_image.dart';
+import 'notifications.dart';
 import 'plans.dart';
 
 class DashboardScreen extends StatefulWidget {
@@ -28,7 +29,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   final pages = const [
     _DashboardScreen(),
     PlansScreen(),
-    SizedBox(),
+    NotificationsScreen(),
   ];
 
   @override
@@ -70,7 +71,7 @@ class _DashboardScreen extends StatelessWidget {
     [Strings.flights, Assets.flights],
     [Strings.packHelp, Assets.packHelp],
     [Strings.leisure, Assets.leisure],
-    [Strings.shortStory, Assets.shortStory],
+    [Strings.shortStay, Assets.shortStay],
     [Strings.map, Assets.map],
     [Strings.restaurants, Assets.restaurants],
     [Strings.drinks, Assets.drinks],
