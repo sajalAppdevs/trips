@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../utils/designs/dimens.dart';
-import 'spacers.dart';
+import '../core/dimens.dart';
 
 class DefaultAppBar extends StatelessWidget with PreferredSizeWidget {
   final String? title;
   final Widget? leading;
   final Widget? trailing;
+  final bool implyLeading;
 
   const DefaultAppBar({
     Key? key,
     this.title,
     this.leading,
     this.trailing,
+    this.implyLeading = true,
   }) : super(key: key);
 
   @override
@@ -22,19 +23,18 @@ class DefaultAppBar extends StatelessWidget with PreferredSizeWidget {
 
     return AppBar(
       foregroundColor: Colors.black,
+      automaticallyImplyLeading: implyLeading,
       systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: theme.colorScheme.primary,
         statusBarIconBrightness: Brightness.light, // For Android (dark icons)
         statusBarBrightness: Brightness.light, // For iOS (dark icons)
       ),
       leading: leading,
-      centerTitle: true,
       title: title != null
           ? Text(
               title!,
-              style: Theme.of(context).textTheme.bodyText1?.copyWith(
-                    fontWeight: FontWeight.w600,
-                    color: Colors.black,
+              style: Theme.of(context).textTheme.headline5?.copyWith(
+                    fontWeight: FontWeight.w400,
                   ),
             )
           : null,
@@ -44,7 +44,7 @@ class DefaultAppBar extends StatelessWidget with PreferredSizeWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   trailing!,
-                  hSpace(sPadding),
+                  hSpace(),
                 ],
               )
             ]

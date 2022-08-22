@@ -5,6 +5,7 @@ class AppColors {
   const AppColors._();
 
   static const primary = Color(0xFF189AB4);
+  static const primaryVariant = Color(0xFFD4F1F4);
   static const text = Color(0xFF05445E);
 }
 
@@ -13,6 +14,7 @@ ThemeData get theme {
   return ThemeData(
     colorScheme: theme.colorScheme.copyWith(
       primary: AppColors.primary,
+      primaryContainer: AppColors.primaryVariant,
     ),
     textTheme: GoogleFonts.poppinsTextTheme(
       theme.textTheme.apply(

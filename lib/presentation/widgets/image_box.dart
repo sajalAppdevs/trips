@@ -5,6 +5,7 @@ import '../core/dimens.dart';
 class ImageBox extends StatelessWidget {
   final String asset;
   final String text;
+  final bool textWrap;
   final double padding;
   final Function()? onClick;
 
@@ -14,31 +15,43 @@ class ImageBox extends StatelessWidget {
     required this.text,
     this.padding = sPadding,
     this.onClick,
+    this.textWrap = false,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    const size = sPadding * 2;
 
-    return Column(
-      children: [
-        InkWell(
-          onTap: onClick,
-          child: Container(
-            padding: EdgeInsets.all(padding),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(5),
-              color: theme.colorScheme.primary,
+    return SizedBox(
+      width: size + padding * 2,
+      child: Column(
+        children: [
+          InkWell(
+            onTap: onClick,
+            child: Container(
+              padding: EdgeInsets.all(padding),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+                color: theme.colorScheme.primary,
+              ),
+              child: Image.asset(
+                asset,
+                height: size,
+                width: size,
+              ),
             ),
-            child: Image.asset(asset),
           ),
-        ),
-        vSpace(padding),
-        Text(
-          text,
-          textAlign: TextAlign.center,
-        ),
-      ],
+          vSpace(padding),
+          Text(
+            text,
+            textAlign: TextAlign.center,
+            overflow: TextOverflow.ellipsis,
+            maxLines: textWrap ? null : 1,
+            softWrap: textWrap,
+          ),
+        ],
+      ),
     );
   }
 }

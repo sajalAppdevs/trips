@@ -48,6 +48,7 @@ class HomeScreen extends StatelessWidget {
                       ImageBox(
                         asset: Assets.createTrip,
                         text: Strings.createTrip,
+                        textWrap: true,
                         onClick: () {
                           Navigator.pushNamed(context, Routes.dashboard);
                         },
@@ -56,8 +57,13 @@ class HomeScreen extends StatelessWidget {
                       ImageBox(
                         asset: Assets.continuePlan,
                         text: Strings.continuePlan,
+                        textWrap: true,
                         onClick: () {
-                          Navigator.pushNamed(context, Routes.dashboard);
+                          Navigator.pushNamed(
+                            context,
+                            Routes.dashboard,
+                            arguments: 1,
+                          );
                         },
                       ),
                       const Spacer(flex: 3),
