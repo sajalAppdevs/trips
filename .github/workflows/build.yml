@@ -26,6 +26,6 @@ jobs:
        id: upload
        uses: JantHsueh/upload-file-action@master
        with:
-         url: ${{ format('https://{0}@api.appetize.io/v1/apps/nye19v8gw59wkabxjzmk9pdrp0', secrets.APPETIZE_TOKEN) }}
+         url: ${{ format('https://{0}@api.appetize.io/v1/apps/clb5jccxxip2rqyiquvweufs6m', secrets.APPETIZE_TOKEN) }}
          forms: '{"platform":"android"}'
          fileForms: '{"file":"build/app/outputs/apk/debug/app-debug.apk"}'
