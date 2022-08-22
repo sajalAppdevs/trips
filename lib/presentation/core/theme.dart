@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppColors {
   const AppColors._();
@@ -13,9 +14,11 @@ ThemeData get theme {
     colorScheme: theme.colorScheme.copyWith(
       primary: AppColors.primary,
     ),
-    textTheme: theme.textTheme.apply(
-      bodyColor: AppColors.text,
-      displayColor: AppColors.text,
+    textTheme: GoogleFonts.poppinsTextTheme(
+      theme.textTheme.apply(
+        bodyColor: AppColors.text,
+        displayColor: AppColors.text,
+      ),
     ),
   );
 }
