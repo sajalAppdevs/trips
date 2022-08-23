@@ -8,7 +8,17 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: subosito/flutter-action@v2
+      with:
+        channel: stable
+    - run: flutter pub get
+    - run: flutter test
+
+  android-debug:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -19,8 +29,8 @@ jobs:
     - run: flutter build apk --debug
     - uses: actions/upload-artifact@v1
       with:
-        name: apk
-        path: build/app/outputs/apk
+        name: debug-apk
+        path: build/app/outputs/apk/debug/app-debug.apk
 
     - name: Push app to appetize
       id: upload
@@ -29,3 +39,17 @@ jobs:
        url: ${{ format('https://{0}@api.appetize.io/v1/apps/clb5jccxxip2rqyiquvweufs6m', secrets.APPETIZE_TOKEN) }}
        forms: '{"platform":"android"}'
        fileForms: '{"file":"build/app/outputs/apk/debug/app-debug.apk"}'
+  
+  android-release:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: subosito/flutter-action@v2
+      with:
+        channel: stable
+    - run: flutter pub get
+    - run: flutter build apk
+    - uses: actions/upload-artifact@v1
+      with:
+        name: release-apk
+        path: build/app/outputs/apk/release/app-release.apk

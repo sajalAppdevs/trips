@@ -1,6 +1,6 @@
 # trips
 
-A app that lets you organize your trips
+An app that lets you organize your trips
 
 ## Screens
 
